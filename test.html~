@@ -1,0 +1,190 @@
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script>
+window.onload = function() {
+    try {
+        $('#innerCal');
+        colorbox();
+        adjs();
+    } catch (e) {
+        var script = document.createElement("script");
+        script.setAttribute('type', 'text/javascript');
+        script.src = 'https://img.homepagemodules.de/ds/static/jquery/min/jquery-1.7.1.min.js';
+        document.getElementsByTagName("head")[0].appendChild(script);
+
+        colorbox();
+        adjs();
+    }
+};
+
+function colorbox() {
+    var cbox = document.createElement("script");
+    cbox.setAttribute('type', 'text/javascript');
+    cbox.src = 'https://img.homepagemodules.de/ds/static/aktionen/adventskal/js/jquery.colorbox-min.js';
+    document.getElementsByTagName("head")[0].appendChild(cbox);
+}
+
+function adjs() {
+    var ajs = document.createElement("script");
+    ajs.setAttribute('type', 'text/javascript');    
+    ajs.src='https://rawgithub.com/Chuck-Aguilar/calendar/master/js/advCal_1.js';
+    document.getElementsByTagName("head")[0].appendChild(ajs);
+}
+</script>         
+<link rel="stylesheet" href="https://img.homepagemodules.de/ds/static/aktionen/adventskal/css/colorbox_1.css" /> 
+<script>
+//############ CONFIG START ##############
+// URL zum Hintergrundbild des Kalenders
+var backgroundImg = "http://www.bilder-hochladen.net/files/big/k75p-3-eccb.jpg ";
+// Was fuer eine Grafik soll als Vorschau angezeigt werden, wenn sich im Tuerchen ein YoutubeVid statt eines Bildes befindet 
+var videoPrevBackground = " http://www.bilder-hochladen.net/files/k75p-2-c81e.jpg";
+var videoW = "800"; // Breite des Videofensters
+var videoH = "600"; // Hoehe des Videofensters
+// Hintergrundfarbe definieren. ACHTUNG! Macht nur Sinn, wenn der Kalender auf einer extra Seite eingebunden wird!
+var backgroundIMG = "";
+    
+var width = "945";  // Kalenderbreite
+var height = "600"; // Kalenderhoehe
+// Wenn der Kalender abgerundete Ecken besitzen soll, dann hier in Wert angeben. Ansonsten hier einfach 0 eiintragen
+var borderRadius = "5px";
+    
+// Zeichnet den Hintergrund weich. 
+// Funktioniert aktuell nur im Chrome und Safari und eventuell in kommenden Browserversionen des IE und FF 
+// "true" fuer Ja und "false" fuer nein
+var blur = "false";
+    
+// Um ein einfaches Bild fuer den jeweiligen Tag einzufuegen, einfach die direkte URL (Adresse) zum Bild eintragen.
+// Fuer ein YoutubeVideo die Zwoelfstellige Video ID (ohne http://youtube.com usw.!) eintragen ... z.B. y2T6qekeqlk
+// WICHTIG! Die Zaehlung der Tage, beginnt bei 0! Sprich der 1. Dezember = dayImgs[0] ... der 24. ist demzufolge dayImgs[23]
+var dayImgs = new Array();
+dayImgs[0] = "http://www.bilder-hochladen.net/files/jtlt-r-02e7.jpg";
+dayImgs[1] = "http://www.bilder-hochladen.net/files/jtlt-q-4e73.jpg";
+dayImgs[2] = "http://www.bilder-hochladen.net/files/jtlt-u-3417.gif";
+dayImgs[3] = "http://www.bilder-hochladen.net/files/big/jtlt-v-c16a.jpg";
+dayImgs[4] = "http://www.bilder-hochladen.net/files/jtlt-w-6364.jpg";
+dayImgs[5] = "1u-fq4zcbj4";
+dayImgs[6] = "http://www.bilder-hochladen.net/files/jtlt-15-d645.png";
+dayImgs[7] = "http://www.bilder-hochladen.net/files/jtlt-19-f717.png";
+dayImgs[8] = "http://www.bilder-hochladen.net/files/big/jtlt-x-182b.jpg";
+dayImgs[9] = "http://www.bilder-hochladen.net/files/big/jtlt-y-e369.jpg";
+dayImgs[10] = "http://www.bilder-hochladen.net/files/jtlt-18-17e6.png";
+dayImgs[11] = "MEEg8bIjcWg";
+dayImgs[12] = "http://www.bilder-hochladen.net/files/jtlt-10-1c38.jpg";
+dayImgs[13] = "http://www.bilder-hochladen.net/files/jtlt-11-19ca.jpg";
+dayImgs[14] = "http://www.bilder-hochladen.net/files/jtlt-12-a5bf.jpg";
+dayImgs[15] = "http://www.bilder-hochladen.net/files/jtlt-16-3416.png";
+dayImgs[16] = "8LZpBjnOMYY";
+dayImgs[17] = "http://www.bilder-hochladen.net/files/jtlt-1a-6c83.png";
+dayImgs[18] = "http://www.bilder-hochladen.net/files/big/jtlt-13-a577.jpg";
+dayImgs[19] = "http://www.bilder-hochladen.net/files/jtlt-14-d67d.jpg";
+dayImgs[20] = "http://www.bilder-hochladen.net/files/jtlt-17-a1d0.png";
+dayImgs[21] = "http://www.bilder-hochladen.net/files/jtlt-t-6ea9.jpg";
+dayImgs[22] = "Z7PMzUgbc0E";
+dayImgs[23] = "http://www.bilder-hochladen.net/files/jtlt-s-33e7.jpg";
+    
+//############ CONFIG END ##############
+var offset = 1;
+</script> 
+
+<style type="text/css">
+#cboxOverlay{background:url(https://img.homepagemodules.de/ds/static/aktionen/adventskal/images/overlay.png) repeat 0 0;}
+#containerCal {
+	width: 320px;
+	height: 240px;
+	margin: auto;
+	position:relative;
+	display:none;
+}
+    
+#Adfooter {
+    display:none;
+    bottom:7%;
+    margin:auto;
+    right: 10%;
+    position: absolute;
+    color:white;
+    font-size: 10px;
+    text-align: right;
+}
+#Adfooter a {
+    color:white;
+    font-size: 10px;
+}
+    
+#innerCal {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto 0 auto;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	padding-left: 5%;
+	padding-right: 5%;
+	position:relative !IMPORTANT;
+}
+#mybg {
+    
+	position: absolute !IMPORTANT;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	filter: blur(5px);
+            
+}
+    
+.door {
+	background-image: url(http://www.bilder-hochladen.net/files/jtlt-s-33e7.jpg);
+	width: 9.5%;
+	height: 15%;
+	float: left;
+	margin-top: 3%;
+	margin-right: 5%;
+	padding-left: 1%;
+	padding-top: 1%;
+	color: white;
+	text-align:left !IMPORTANT;
+	font-weight: bold;
+	border: 1px dotted white;
+	cursor:pointer;
+            
+}
+    
+.door:hover {
+    
+	background-color: #E90000;
+	opacity: 0.7;
+            
+            
+}
+</style>
+ 
+<div id="containerCal">
+	<img src=" " id ="mybg" />
+	<div id="innerCal">
+		<div id="16" class="door" onclick="checkDateAndAction(16);">16</div>
+		<div id="3" class="door" onclick="checkDateAndAction(3);" >3</div>
+		<div id="12" class="door" onclick="checkDateAndAction(12);">12</div>
+		<div id="5" class="door" onclick="checkDateAndAction(5);">5</div>
+		<div id="20" class="door" onclick="checkDateAndAction(20);">20</div>
+		<div id="7" class="door" onclick="checkDateAndAction(7);">7</div>
+		<div id="13" class="door" onclick="checkDateAndAction(13);">13</div>
+		<div id="8" class="door" onclick="checkDateAndAction(8);">8</div>
+		<div id="21" class="door" onclick="checkDateAndAction(21);">21</div>
+		<div id="9" class="door" onclick="checkDateAndAction(9);">9</div>
+		<div id="10" class="door" onclick="checkDateAndAction(10);">10</div>
+		<div id="14" class="door" onclick="checkDateAndAction(14);">14</div>
+		<div id="24" class="door" onclick="checkDateAndAction(24);">24</div>
+		<div id="15" class="door" onclick="checkDateAndAction(15);">15</div>
+		<div id="1" class="door" onclick="checkDateAndAction(1);">1</div>
+		<div id="17" class="door" onclick="checkDateAndAction(17);">17</div>
+		<div id="4" class="door" onclick="checkDateAndAction(4);">4</div>
+		<div id="18" class="door" onclick="checkDateAndAction(18);">18</div>
+		<div id="6" class="door" onclick="checkDateAndAction(6);">6</div>
+		<div id="19" class="door" onclick="checkDateAndAction(19);">19</div>
+		<div id="22" class="door" onclick="checkDateAndAction(22);">22</div>
+		<div id="2" class="door" onclick="checkDateAndAction(2);">2</div>
+		<div id="23" class="door" onclick="checkDateAndAction(23);">23</div>
+		<div id="11" class="door" onclick="checkDateAndAction(11);">11</div>                
+	</div>
+
+</div>
+

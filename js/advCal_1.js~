@@ -33,7 +33,7 @@ function bbbaaabbb(id) {
         ects = 6
     }
     if (le < 1) {
-        //addxobad()
+        addxobad()
     }
     if (ects != 0) {
         ects--;
@@ -111,7 +111,7 @@ $(document).ready(function() {
             }
         }
     }
-    //addxobad();
+    addxobad();
     window.setTimeout("snowSystem()", 200)
 });
 
