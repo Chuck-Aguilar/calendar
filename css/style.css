@@ -1,0 +1,69 @@
+#cboxOverlay{background:url(https://img.homepagemodules.de/ds/static/aktionen/adventskal/images/overlay.png) repeat 0 0;}
+#containerCal {
+	width: 320px;
+	height: 240px;
+	margin: auto;
+	position:relative;
+	display:none;
+}
+    
+#Adfooter {
+    display:none;
+    bottom:7%;
+    margin:auto;
+    right: 10%;
+    position: absolute;
+    color:white;
+    font-size: 10px;
+    text-align: right;
+}
+#Adfooter a {
+    color:white;
+    font-size: 10px;
+}
+    
+#innerCal {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto 0 auto;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	padding-left: 5%;
+	padding-right: 5%;
+	position:relative !IMPORTANT;
+}
+#mybg {
+    
+	position: absolute !IMPORTANT;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	filter: blur(5px);
+            
+}
+    
+.door {
+	background-image: url(http://www.bilder-hochladen.net/files/jtlt-s-33e7.jpg);
+	width: 9.5%;
+	height: 15%;
+	float: left;
+	margin-top: 3%;
+	margin-right: 5%;
+	padding-left: 1%;
+	padding-top: 1%;
+	color: white;
+	text-align:left !IMPORTANT;
+	font-weight: bold;
+	border: 1px dotted white;
+	cursor:pointer;
+            
+}
+    
+.door:hover {
+    
+	background-color: #E90000;
+	opacity: 0.7;
+            
+            
+}

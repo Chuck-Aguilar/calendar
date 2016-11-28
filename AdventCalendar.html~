@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>AdventCalendar</title>  
+  <link rel="stylesheet" href="https://img.homepagemodules.de/ds/static/aktionen/adventskal/css/colorbox_1.css" />    
+  <link href="css/style.css" rel="stylesheet"/>  
+</head>
+<body>            
+<div id="containerCal">
+	<img src=" " id ="mybg" />
+	<div id="innerCal">
+		<div id="16" class="door" onclick="checkDateAndAction(16);">16</div>
+		<div id="3" class="door" onclick="checkDateAndAction(3);" >3</div>
+		<div id="12" class="door" onclick="checkDateAndAction(12);">12</div>
+		<div id="5" class="door" onclick="checkDateAndAction(5);">5</div>
+		<div id="20" class="door" onclick="checkDateAndAction(20);">20</div>
+		<div id="7" class="door" onclick="checkDateAndAction(7);">7</div>
+		<div id="13" class="door" onclick="checkDateAndAction(13);">13</div>
+		<div id="8" class="door" onclick="checkDateAndAction(8);">8</div>
+		<div id="21" class="door" onclick="checkDateAndAction(21);">21</div>
+		<div id="9" class="door" onclick="checkDateAndAction(9);">9</div>
+		<div id="10" class="door" onclick="checkDateAndAction(10);">10</div>
+		<div id="14" class="door" onclick="checkDateAndAction(14);">14</div>
+		<div id="24" class="door" onclick="checkDateAndAction(24);">24</div>
+		<div id="15" class="door" onclick="checkDateAndAction(15);">15</div>
+		<div id="1" class="door" onclick="checkDateAndAction(1);">1</div>
+		<div id="17" class="door" onclick="checkDateAndAction(17);">17</div>
+		<div id="4" class="door" onclick="checkDateAndAction(4);">4</div>
+		<div id="18" class="door" onclick="checkDateAndAction(18);">18</div>
+		<div id="6" class="door" onclick="checkDateAndAction(6);">6</div>
+		<div id="19" class="door" onclick="checkDateAndAction(19);">19</div>
+		<div id="22" class="door" onclick="checkDateAndAction(22);">22</div>
+		<div id="2" class="door" onclick="checkDateAndAction(2);">2</div>
+		<div id="23" class="door" onclick="checkDateAndAction(23);">23</div>
+		<div id="11" class="door" onclick="checkDateAndAction(11);">11</div>
+                <div id="Adfooter"><a href="https://www.xobor.de/xobor-adventskalender.html" target="_blank">Den eigenen Kalender auf der Homepage</a></div>
+                <img src="https://www.xobor.de/AdAdvent" width="1" height="1" />
+	</div>
+
+</div>
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/avCal_utils.js"></script>
+<script type="text/javascript" src="js/config.js"></script>
+</body>
+</html>
