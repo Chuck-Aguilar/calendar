@@ -50,7 +50,7 @@ function addxobad() {
         getHeightMargin()
     } catch (e) {
         $('#containerCal').append('<div id=\"' + aa + '\"></div>');
-        //$('#' + aa).html('<img src=\"http://img.homepagemodules.de/xl16c.png\" alt=\"Xobor.de\"><a style=\"text-decoration:none; color: #8d8d8d;\" href=\"http://www.xobor.de\">&ensp;Einfach ein eigenes Xobor Forum erstellen</a>');
+        $('#' + aa).html('<img src=\"http://img.homepagemodules.de/xl16c.png\" alt=\"Xobor.de\"><a style=\"text-decoration:none; color: #8d8d8d;\" href=\"http://www.xobor.de\">&ensp;Einfach ein eigenes Xobor Forum erstellen</a>');
         ssc(aa);
         $bxo = $('#innerCal ~ div').first();
         window.setTimeout("bbbaaabbb(aa)", 1000)
